@@ -7,14 +7,11 @@ const person = {
     },
     phone: [987654345, 879846527]
 }
-
 person.name//Vikas
 person.age//24
-
 const { name: userName, age,
-    address: { permanent: { city: homeTown }, temporary },
-    phone } = person
-// console.log(homeTown, temporary)
-// console.log(userName)
+    address: { permanent: { city: homeTown }, temporary }, phone } = person
+console.log(homeTown)//Chennai
+console.log(userName)
 const [mobileNumber, telephone] = phone
-console.log(mobileNumber, telephone, phone)
+console.log(mobileNumber)//987654345
