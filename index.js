@@ -1,55 +1,20 @@
-// How to Flatten Array and Object in JavaScript
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-//input
-const arr = [1, 2, 3, [4, 5, [6, 7, [8, 9, 10]]]]
-const obj = {
-    name: "Vikas", age: 24,
-    address: { flatNo: 32, city: "Chennai", }
-}
+// const evenNumbers = numbers.filter((number, index, array) => number % 2 == 0);
+// console.log(evenNumbers);
 
-//output
-// arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// obj = { name: "Vikas", age: 24, flatNo: 32, city: "Chennai" }
-
-//using javascript function
-// console.log(arr.flat(Infinity)) //arr.flat(1)
-
-const flattenArray = (arr) => {
-    const newArr = [];
-    const getFlattenArr = (arg) => {
-        arg.forEach(dt => {
-            if (Array.isArray(dt)) {
-                getFlattenArr(dt)
-            } else {
-                newArr.push(dt)//pushing new element to array
-            }
-        })
+Array.prototype.myFilter = function (func) {
+  let filtered = [];
+  for (let i = 0; i < this.length; i++) {
+    if (func(this[i], i, this)) {
+      filtered.push(this[i]);
     }
-    getFlattenArr(arr)
-    return newArr;
-}
+  }
+  return filtered;
+};
 
+// console.log(numbers.myFilter((num) => num % 2 != 0));
 
-// console.log(flattenArray(arr))
+const students = [{ name: "Vikas" }, { name: "Gorge" }];
 
-// console.log(obj)
-const flattenObj = (object) => {
-    const newObj = {}
-    const getFlattenObj = (obj) => {
-        // obj['name']//Vikas
-        Object.keys(obj).forEach(key => {
-            if (typeof obj[key] == "object") {
-                getFlattenObj(obj[key])
-            } else {
-                newObj[key] = obj[key]// adding new property with value
-            }
-        })
-    }
-    getFlattenObj(object)
-    return newObj
-}
-
-
-console.log(flattenObj(obj))
-
-
+console.log(students.myFilter((stu) => stu.name == "vikas"));
