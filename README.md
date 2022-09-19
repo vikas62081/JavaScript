@@ -1,3 +1,3 @@
 # JavaScript
 
-- [x] String sorting in js
+- [x] Date sorting on array of object in js
