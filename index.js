@@ -1,34 +1,14 @@
-//How to Uppercase the First Letter in a Word with JS
-//method 1
+//String sorting in javascript
 
-// const name = "vikas";
-// const uppercase = name.charAt(0).toUpperCase();
-// // const remainingLetters = name.substring(1);
-// const remainingLetters = name.slice(1);
-// const capsWord = uppercase + remainingLetters;
-// console.log(capsWord);
-
-// mothod 2
-
-// const capsWord1 = name.charAt(0).toUpperCase() + name.slice(1);
-// console.log(capsWord1);
-
-// function (word)
-const getCapsString = (str) => {
-  if (str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+const names = ["Vikas", "akash", "Ryan"];
+const customSort = (a, b) => {
+  let firstLetter = a.toUpperCase();
+  let secondLetter = b.toUpperCase();
+  if (firstLetter > secondLetter) {
+    return 1;
+  } else if (firstLetter < secondLetter) {
+    return -1;
   }
-  return null;
+  return 0;
 };
-
-// console.log(getCapsString("gdsffgshkjd"));
-
-// for a sentence
-//output Vikas Kumar
-const getCapsSentence = (sentence) =>
-  sentence
-    .split(" ")
-    .map((word) => getCapsString(word))
-    .join(" ");
-
-console.log(getCapsSentence("vikas kumar vishwakarma"));
+console.log(names.sort(customSort));
