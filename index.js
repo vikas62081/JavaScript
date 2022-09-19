@@ -24,7 +24,6 @@ const getCapsString = (str) => {
 // console.log(getCapsString("gdsffgshkjd"));
 
 // for a sentence
-name = "vikas kumar";
 //output Vikas Kumar
 const getCapsSentence = (sentence) =>
   sentence
