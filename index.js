@@ -13,7 +13,7 @@
 // const capsWord1 = name.charAt(0).toUpperCase() + name.slice(1);
 // console.log(capsWord1);
 
-// fucntion (word)
+// function (word)
 const getCapsString = (str) => {
   if (str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
