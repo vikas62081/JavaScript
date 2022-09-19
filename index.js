@@ -1,19 +1,20 @@
-//Date sorting in javascript
+//Check empty array object in javascript
+const array = []; // false
+const object = {}; // false
+//simple function
+// const _isEmptyArray = (arr) => {
+//   return arr?.length == 0;
+// };
 
-const employees = [
-  { name: "Shyam", email: "shyam@gmail.com", dob: "22 aug 1990" },
-  { name: "Shyam", email: "shyam@gmail.com", dob: "21 aug 1990" },
+// prototype function
 
-  { name: "Bob", email: "bob32@gmail.com", dob: "12 july 1986" },
-  { name: "Jai", email: "jai87@gmail.com", dob: "05 april 1992" },
-];
-
-customSort = (a, b) => {
-  const dateA = new Date(a.dob);
-  const dateB = new Date(b.dob);
-  if (dateA > dateB) return 1;
-  else if (dateA < dateB) return -1;
-  return 0;
+Array.prototype._isEmpty = function () {
+  return this?.length == 0;
 };
 
-console.log(employees.sort(customSort));
+// console.log(array._isEmpty());
+
+Object.prototype._isEmpty = function () {
+  return Object.keys(this)?.length == 0;
+};
+console.log(object._isEmpty());
