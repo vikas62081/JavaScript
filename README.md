@@ -2,4 +2,7 @@
 
 # List 
 
-Going to home
+```js
+console.log("hello world")
+)
+```
